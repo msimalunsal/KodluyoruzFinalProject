@@ -83,11 +83,10 @@ public class Player : Character
 	{
 		x = Input.GetAxis("Mouse X");
 		y = Input.GetAxis("Mouse Y");
-
 		//lerp (smooth) movement
 		touch = Vector3.Lerp(
-			holeCenter.position,
-			holeCenter.position + new Vector3(x, 0f, y), //move hole on x & z 
+			holeCenter.localPosition,
+			holeCenter.localPosition + new Vector3(x, 0f, y), //move hole on x & z 
 			moveSpeed * Time.deltaTime
 		);
 
@@ -98,7 +97,7 @@ public class Player : Character
 			Mathf.Clamp(touch.z, -moveLimits.y, moveLimits.y)//limit Z
 		);
 
-		holeCenter.position = targetPos;
+		holeCenter.localPosition = targetPos;
 	}
     #endregion
 }

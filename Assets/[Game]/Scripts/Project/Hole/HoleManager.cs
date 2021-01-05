@@ -41,14 +41,14 @@ public class HoleManager : Singleton<HoleManager>
 		for (int i = 0; i < mesh.vertices.Length; i++)
 		{
 			//Calculate distance between holeCenter & each Vertex
-			float distance = Vector3.Distance(holeCenter.position, mesh.vertices[i]);
+			float distance = Vector3.Distance(holeCenter.localPosition, mesh.vertices[i]);
 
 			if (distance < radius)
 			{
 				//this vertex belongs to the Hole
 				holeVertices.Add(i);
 				//offset: how far the Vertex from the HoleCenter
-				offsets.Add(mesh.vertices[i] - holeCenter.position);
+				offsets.Add(mesh.vertices[i] - holeCenter.localPosition);
 			}
 		}
 		//save hole vertices count
@@ -71,7 +71,7 @@ public class HoleManager : Singleton<HoleManager>
 		Vector3[] vertices = mesh.vertices;
 		for (int i = 0; i < holeVerticesCount; i++)
 		{
-			vertices[holeVertices[i]] = holeCenter.position + offsets[i];
+			vertices[holeVertices[i]] = holeCenter.localPosition + offsets[i];
 		}
 
 		//update mesh vertices
