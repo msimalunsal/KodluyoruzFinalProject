@@ -30,7 +30,7 @@ public class LevelManager : Singleton<LevelManager>
     }
     #endregion
 
-    #region GameOver
+    #region Private Methods
     private void OnEnable()
     {
         EventManager.OnGameOver.AddListener(GameOver);
@@ -41,7 +41,7 @@ public class LevelManager : Singleton<LevelManager>
         EventManager.OnGameOver.RemoveListener(GameOver);
     }
 
-    public void GameOver()
+    void GameOver()
     {
         StartCoroutine(LoadNextSceneCo());
     }

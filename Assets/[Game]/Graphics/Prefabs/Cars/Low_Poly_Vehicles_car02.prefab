@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2805505711490451721}
   - component: {fileID: 3543977993293878664}
   - component: {fileID: 3543977993293878665}
-  - component: {fileID: 3543977993293878666}
+  - component: {fileID: 237740930869468100}
   m_Layer: 0
   m_Name: Low_Poly_Vehicles_car02
   m_TagString: Enemy
@@ -107,9 +107,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4463019834184591580}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.16999997, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5341571736822541188}
   - {fileID: 8005961472216758570}
@@ -117,7 +117,7 @@ Transform:
   - {fileID: 4337714685212835693}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &75399961187401155
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3543977993293878666
+--- !u!114 &237740930869468100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,9 +203,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4463019834184591580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afdb27728cc25114383f3e50ce727dda, type: 3}
+  m_Script: {fileID: 11500000, guid: 83e01bb211ac8604aae0aca8932325bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharacterControllerType: 1
+  targetPointObj: {fileID: 0}
 --- !u!1 &6579824693174330082
 GameObject:
   m_ObjectHideFlags: 0

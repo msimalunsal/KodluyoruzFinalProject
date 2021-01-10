@@ -11,10 +11,9 @@ public class GameManager : Singleton<GameManager>
     {
         if (IsGameStarted)
             return;
-
+        
         IsGameStarted = true;
         EventManager.OnGameStart.Invoke();
-
     }
 
     public void EndGame()
@@ -23,6 +22,7 @@ public class GameManager : Singleton<GameManager>
             return;
 
         IsGameStarted = false;
+
         EventManager.OnGameOver.Invoke();
     }
     #endregion

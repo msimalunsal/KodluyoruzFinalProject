@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 6140409367017668617}
   - component: {fileID: 4825194034961276032}
   - component: {fileID: 4825194034961276033}
-  - component: {fileID: 4825194034961276046}
+  - component: {fileID: 2584345822435425451}
   m_Layer: 0
   m_Name: Low_Poly_Vehicles_pickupTruck01
   m_TagString: Enemy
@@ -265,9 +265,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5636221643601633756}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.16999997, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4177412375595770500}
   - {fileID: 2072454997598498858}
@@ -275,7 +275,7 @@ Transform:
   - {fileID: 5758588639772489325}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8274214779418129603
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4825194034961276046
+--- !u!114 &2584345822435425451
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -361,9 +361,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5636221643601633756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afdb27728cc25114383f3e50ce727dda, type: 3}
+  m_Script: {fileID: 11500000, guid: 83e01bb211ac8604aae0aca8932325bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharacterControllerType: 1
+  targetPointObj: {fileID: 0}
 --- !u!1 &7663451915874493824
 GameObject:
   m_ObjectHideFlags: 0

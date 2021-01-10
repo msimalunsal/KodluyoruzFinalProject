@@ -16,5 +16,9 @@ public static class EventManager
     #region Data Events
     public static PlayerDataEvent OnPlayerDataUpdated = new PlayerDataEvent();
     #endregion
+
+    #region Car Events
+    public static UnityEvent OnCarCreate = new UnityEvent();
+    #endregion
 }
 public class PlayerDataEvent : UnityEvent<PlayerData> { }

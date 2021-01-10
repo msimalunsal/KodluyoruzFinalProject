@@ -72,5 +72,19 @@ public class CharacterManager : Singleton<CharacterManager>
         if (Characters.Contains(character))
             Characters.Remove(character);
     }
+
+    public void setEnabled(Character character, Transform transform)
+    {
+        character.transform.position = transform.position;
+        character.enabled = true;
+    }
+
+    public void Initiliaze()
+    {
+        foreach (var character in characters)
+        {
+            character.enabled = false;
+        }
+    }
     #endregion
 }

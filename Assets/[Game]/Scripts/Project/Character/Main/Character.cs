@@ -31,13 +31,13 @@ public class Character : MonoBehaviour
 
     #region Character Events
     [HideInInspector]
-    public UnityEvent OnCharacterDie = new UnityEvent();
+    public static UnityEvent OnCharacterDie = new UnityEvent();
     [HideInInspector]
-    public UnityEvent OnCharacterWalk = new UnityEvent();
+    public static UnityEvent OnCharacterWalk = new UnityEvent();
     [HideInInspector]
-    public UnityEvent OnCharacterJump = new UnityEvent();
+    public static UnityEvent OnCharacterReach = new UnityEvent();
     [HideInInspector]
-    public UnityEvent OnCharacterSlide = new UnityEvent();
+    public static UnityEvent OnCharacterSlide = new UnityEvent();
     #endregion
 
     #region Private Methods
