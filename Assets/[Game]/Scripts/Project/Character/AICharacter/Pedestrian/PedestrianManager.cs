@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PedestrianManager : MonoBehaviour
+public class PedestrianManager : Singleton<PedestrianManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    List<Pedestrian> pedestrians = new List<Pedestrian>();
 
-    // Update is called once per frame
-    void Update()
+    public Pedestrian GetRandomPedestrian()
     {
-        
+        int randIndex = Random.Range(0, pedestrians.Count);
+        return pedestrians[randIndex];
     }
 }

@@ -4,8 +4,8 @@ public abstract class SpawnerPointsBase : MonoBehaviour
 {
     #region Protected Fields
     protected float delay;
-    protected Character character;
-    protected Transform pointTransform;
+    public Character character;
+    public Vector3 pointPosition;
     #endregion
 
     #region Protected Methods
@@ -27,7 +27,10 @@ public abstract class SpawnerPointsBase : MonoBehaviour
     /// </summary>
     protected virtual void Spawn()
     {
-        CharacterManager.Instance.setEnabled(character, pointTransform);
+        if(character != null)
+            CharacterManager.Instance.setEnabled(character, pointPosition);
+
+        EventManager.OnCharacterCreate.Invoke();
     }
     #endregion
 }

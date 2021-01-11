@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PedestrianSpawnerPoint : SpawnerPointsBase
+﻿public class PedestrianSpawnerPoint : SpawnerPointsBase
 {
     private void OnEnable()
     {
+        if (Managers.Instance == null)
+            return;
+        
         base.OnEnable();
 
+        character = PedestrianManager.Instance.GetRandomPedestrian();
+        pointPosition = transform.position;
     }
 }

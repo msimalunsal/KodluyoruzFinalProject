@@ -72,10 +72,9 @@ public class CharacterManager : Singleton<CharacterManager>
         if (Characters.Contains(character))
             Characters.Remove(character);
     }
-
-    public void setEnabled(Character character, Transform transform)
+    public void setEnabled(Character character, Vector3 position)
     {
-        character.transform.position = transform.position;
+        character.transform.position = position;
         character.enabled = true;
     }
 

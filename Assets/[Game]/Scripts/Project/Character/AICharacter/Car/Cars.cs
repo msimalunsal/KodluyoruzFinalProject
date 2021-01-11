@@ -15,7 +15,6 @@ public class Cars : Character, Killable
         SaveLoadManager.SavePDP(playerData, SavedFileNameHolder.PlayerData);
         Debug.Log(playerData.CoinAmount);
         moveTween.Kill();
-        gameObject.transform.SetParent(CarSpawner.vehiclesAll);
     }
     #endregion
 
@@ -32,23 +31,27 @@ public class Cars : Character, Killable
     #endregion
 
     #region Private Methods
-    //void Start() 
-    //{
-    //    addToTarget();
-    //}
     private void OnEnable()
     {
+        if (Managers.Instance == null)
+            return;
+
         CarManager.Instance.AddCar(this);
 
+        addToTarget(targetPointObj);
+
         delay = Random.Range(0f,2f);
-        EventManager.OnCarCreate.AddListener(() => this.Wait(delay, Movement));     
+        EventManager.OnCharacterCreate.AddListener(() => this.Wait(delay, Movement));     
     }
 
-    private void OnDisable()
+    private void Destroy()
     {
-        //CarManager.Instance.RemoveCar(this); ====> bu kısımdan çok emin değilim sorun yaratabilir
+        if (Managers.Instance == null)
+            return;
 
-        EventManager.OnCarCreate.RemoveListener(() => this.Wait(delay, Movement));
+        CarManager.Instance.RemoveCar(this);
+
+        EventManager.OnCharacterCreate.RemoveListener(() => this.Wait(delay, Movement));
     }
 
     void Movement()
@@ -66,7 +69,6 @@ public class Cars : Character, Killable
                     Movement();
                 }                    
             });
-        //gameObject.transform.SetParent(vehiclesAll.transform);/// ulaşınca pool sistemi dolayısıyla tekrar arabaları v
     }
 
     public void addToTarget(GameObject gameObject)

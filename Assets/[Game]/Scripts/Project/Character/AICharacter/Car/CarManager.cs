@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class CarManager : Singleton<CarManager>
 {
-    #region Fields
-    List<Cars> cars = new List<Cars>();
+    #region Properties
+    public List<Cars> cars;
     #endregion
 
     #region Public Methods
@@ -20,31 +20,6 @@ public class CarManager : Singleton<CarManager>
             cars.Remove(car);
     }
     
-    /// <summary>
-    /// Set disable all cars
-    /// </summary>
-    public void Initiliaze()
-    {
-        foreach (var car in cars)
-        {
-            car.enabled = false;
-        }
-    }
-
-    /// <summary>
-    /// It does on enable the car at position given to itself
-    /// </summary>
-    /// <param name="car"></param>
-    /// <param name="spawnTransform"></param>
-    public void DoEnable(Cars car, Transform spawnTransform)
-    {
-        if (cars.Contains(car))
-        {
-            car.transform.position = spawnTransform.position;
-            car.enabled = true;
-        }            
-    }
-
     /// <summary>
     /// It returns a random car from cars list
     /// </summary>
